@@ -15,7 +15,7 @@ public class GestorRecursos {
 
 
 
-    public void agregarRecurso(Recursos recurso){
+    public void agregarRecurso(Recursos recurso)throws RecursoAntiguo {
         if(recurso.getAñoPublicacion() < 1923){
             throw new RecursoAntiguo("El recurso es muy antiguo para ser prestado");
         } else {

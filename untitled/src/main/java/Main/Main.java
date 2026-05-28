@@ -1,5 +1,6 @@
 package Main;
 
+import Gestores.GestorRecursos;
 import Recursos.Libro;
 import Recursos.Revista;
 import Recursos.RecursoDigital;
@@ -25,6 +26,29 @@ public class Main {
         Recursos libro3 = new Libro(6,"Sa´po",1900,
                 true,"Samuel Castillo","12345678c");
 
+        GestorRecursos g = new GestorRecursos();
 
+        g.agregarRecurso(libro1);
+        g.agregarRecurso(libro2);
+        g.agregarRecurso(revista1);
+        g.agregarRecurso(revista2);
+        g.agregarRecurso(recursoDigital1);
+        g.agregarRecurso(recursoDigital2);
+
+        System.out.println("estos estan disponibles" + g.mostrarDisponible());
+
+        g.prestarRecurso(libro1);
+        g.prestarRecurso(libro2);
+
+        System.out.println("estos esran prestados" + g.mostrarPrestados());
+
+        g.devolverRecruso(libro1);
+        System.out.println("Libro1 devuelto");
+
+        g.ReportarUso();
+
+
+        g.prestarRecurso(libro2);
+        g.agregarRecurso(libro3);
     }
 }
